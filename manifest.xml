@@ -2,11 +2,23 @@
     <iq:application entry="ColourHRApp" id="03F76805C217406A9FE7151E7F0D3869" launcherIcon="@Drawables.LauncherIcon" name="@Strings.AppName" type="datafield">
 
         <iq:products>
+            <iq:product id="fr630"/>
+            <iq:product id="fr235"/>
+            <iq:product id="fr735xt"/>
+            <iq:product id="fr230"/>
+            <iq:product id="vivoactive"/>
+            <iq:product id="fenix3"/>
+            <iq:product id="fenix3_hr"/>
+            <iq:product id="d2bravo"/>
+            <iq:product id="d2bravo_titanium"/>
+            <iq:product id="fr920xt"/>
+            <iq:product id="epix"/>
+            <iq:product id="edge_1000"/>
+            <iq:product id="edge_520"/>
             <iq:product id="vivoactive_hr"/>
         </iq:products>
 
-        <iq:permissions>
-        </iq:permissions>
+        <iq:permissions/>
 
         <iq:languages>
             <iq:language>eng</iq:language>
