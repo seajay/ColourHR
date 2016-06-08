@@ -63,27 +63,26 @@ class ColourHRView extends Ui.DataField {
         var bgColor = Gfx.COLOR_WHITE;
         var fgColor = Gfx.COLOR_BLACK;
 
-        if( mHeartRate > 172)
+        if( mHeartRate > 171)
         { 
         	bgColor = Gfx.COLOR_RED;
         }
-        else if( mHeartRate > 159)
+        else if( mHeartRate > 158)
         {
         	bgColor = Gfx.COLOR_ORANGE;
         }
-        else if( mHeartRate > 147)
-        {
-        	bgColor = Gfx.COLOR_YELLOW;
-        }
-        else if( mHeartRate > 135)
+        else if( mHeartRate > 145)
         {
         	bgColor = Gfx.COLOR_GREEN;
         }
-        else if( mHeartRate > 123)
+        else if( mHeartRate > 132)
         {
         	bgColor = Gfx.COLOR_BLUE;
         }
-
+        else if( mHeartRate > 120)
+        {
+        	bgColor = Gfx.COLOR_LT_GRAY;
+        }
 
         // Set the background color
         View.findDrawableById("Background").setColor(bgColor);
