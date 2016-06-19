@@ -1,5 +1,7 @@
 using Toybox.WatchUi as Ui;
 using Toybox.Graphics as Gfx;
+using Toybox.UserProfile as UserProfile;
+using Toybox.System;
 
 class ColourHRView extends Ui.DataField {
 
@@ -8,6 +10,7 @@ class ColourHRView extends Ui.DataField {
     }
 
     hidden var mHeartRate = 0;
+    hidden var mHRZones = [120, 132, 145, 158, 171];
 
     //! Set your layout here. Anytime the size of obscurity of
     //! the draw context is changed this will be called.
@@ -62,24 +65,30 @@ class ColourHRView extends Ui.DataField {
     function onUpdate(dc) {
         var bgColor = Gfx.COLOR_WHITE;
         var fgColor = Gfx.COLOR_BLACK;
+        var profile = UserProfile.getProfile();
 
-        if( mHeartRate > 171)
+        if( profile != null ) {
+	        mHRZones = profile.getHeartRateZones(profile.getCurrentSport());
+	    }
+
+
+        if( mHeartRate >= mHRZones[4])
         { 
         	bgColor = Gfx.COLOR_RED;
         }
-        else if( mHeartRate > 158)
+        else if( mHeartRate >= mHRZones[3])
         {
         	bgColor = Gfx.COLOR_ORANGE;
         }
-        else if( mHeartRate > 145)
+        else if( mHeartRate >= mHRZones[2])
         {
         	bgColor = Gfx.COLOR_GREEN;
         }
-        else if( mHeartRate > 132)
+        else if( mHeartRate >= mHRZones[1])
         {
         	bgColor = Gfx.COLOR_BLUE;
         }
-        else if( mHeartRate > 120)
+        else if( mHeartRate >= mHRZones[0])
         {
         	bgColor = Gfx.COLOR_LT_GRAY;
         }
