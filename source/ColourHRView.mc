@@ -78,7 +78,7 @@ class ColourHRView extends Ui.DataField {
         }
         else if( mHeartRate >= mHRZones[3])
         {
-        	bgColor = Gfx.COLOR_ORANGE;
+			bgColor = Gfx.COLOR_YELLOW;
         }
         else if( mHeartRate >= mHRZones[2])
         {
